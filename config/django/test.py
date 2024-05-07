@@ -23,3 +23,15 @@ CACHES = {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
     }
 }
+
+
+from corsheaders.defaults import default_headers
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_HEADERS = (
+    *default_headers,
+    "x-access-token",
+    "content-disposition"
+)
